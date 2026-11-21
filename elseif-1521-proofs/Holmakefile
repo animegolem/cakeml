@@ -1,0 +1,8 @@
+# HOL4 theories about the #1521 grammar change. Build with CAKEMLDIR set to a built CakeML containing the change,
+# and pass --no_prereqs so Holmake builds nothing in that tree.
+INCLUDES = $(CAKEMLDIR)/misc $(CAKEMLDIR)/basis/pure $(CAKEMLDIR)/pancake $(CAKEMLDIR)/pancake/semantics $(CAKEMLDIR)/pancake/parser
+all: $(DEFAULT_TARGETS)
+.PHONY: all
+ifdef POLY
+HOLHEAP = $(CAKEMLDIR)/misc/cakeml-heap
+endif
